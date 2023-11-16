@@ -1,0 +1,19 @@
+├── app.py
+├── assets
+│   ├── dataviz.jpg
+│   ├── glacierfondu.jpg
+│   ├── logo_datascientest.png
+│   ├── methodologie.jpg
+│   ├── preprocessing.png
+├── data
+│   ├── anomalie_temperature_globale.csv
+│   ├── co2_global_non_nettoye.csv
+│   └── moyenne anomalie temperature par hemisphere.csv
+├── README.md
+├── requirements.txt
+└── tabs
+    ├── introduction.py
+    ├── preprocessing.py
+    ├── datavisualisation.py
+    ├── methodologie.py
+    ├── demo.py
