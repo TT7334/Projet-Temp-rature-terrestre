@@ -72,7 +72,7 @@ def dataviz():
     )
     p.add_tools(hover)
     p.legend.location = "bottom_right"
-    st.write(p)
+    st.bokeh_chart(p)
     st.write("Grâce à ce graphique (construit à l’aide de la librairie Bokeh), nous avons croisé la variable année avec les mesures prises. Nous pouvons clairement constater une nette augmentation des anomalies de températures au fil des années.") 
     st.write("Cette tendance se confirme également pour les deux hémisphères de manière équivalente. En effet, les droites de régression, en pointillé, nous le montre.") 
     st.write("Nous notons toutefois que c’est l’hémisphère Nord notre qui témoigne de l’augmentation la plus marquée, surtout ces dernières décennies.") 
