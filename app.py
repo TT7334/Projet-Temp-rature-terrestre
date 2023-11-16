@@ -27,7 +27,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 #A récupérer le logo de datascientest
-st.sidebar.image("../assets/logo_datascientest.png")
+st.sidebar.image("./assets/logo_datascientest.png")
 
 # Case à cocher pour la navigation entre les pages
 from introduction import introduction_projet
