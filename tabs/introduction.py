@@ -7,7 +7,7 @@ import numpy as np
 def introduction_projet():
 #PARTIE "Introduction du projet"
     # Image de garde
-    st.image("../assets/glacierfondu.jpg", use_column_width=True)
+    st.image("./assets/glacierfondu.jpg", use_column_width=True)
 
     # Titre de la page
     st.markdown(f'<h1 style="white-space: nowrap;"><u>Projet fil rouge: Température terrestre</u></h1>', unsafe_allow_html=True)
@@ -41,7 +41,7 @@ def introduction_projet():
     st.write("Concentrons-nous maintenant sur les datasets que nous avons utilisés pour mener à bien ce projet :")
 
     st.write("<strong>1. Dataset sur les anomalies de températures :</strong>", unsafe_allow_html=True)
-    data_temp = pd.read_csv("../data/anomalie_temperature_globale.csv", sep=",", encoding='cp1252')
+    data_temp = pd.read_csv("./data/anomalie_temperature_globale.csv", sep=",", encoding='cp1252')
     pays_uniques = data_temp["Area"].unique()
     selected_pays = st.selectbox("Si vous le souhaitez, vous pouvez sélectionner un pays de votre choix :", pays_uniques)
     if selected_pays == "":
@@ -52,7 +52,7 @@ def introduction_projet():
     st.write("Nous sommes en présence d’un tableur en deux dimensions composées de 9 656 lignes et 66 colonnes (variables).<br> En colonne sont répertoriées les années de mesures, commençant de 1961 et allant jusqu’à 2022.<br> Nous avons en colonnes d'autres informations comme les pays du monde, les mois de mesures et si la mesures est une anomalie de températures (« temperature change ») et l’écart-type par rapport au révérenciel de comparaison (Standard Deviation). <br>Les colonnes « Code  » sont les codifications des différentes colonnes catégorielles: Le pays (Area Code), Les mois de mesure (Months Code) et les Eléments (Element code).<br> Nous avons également dans la variable « Area », en plus des pays du monde entier, des « zones » géographiques comme le monde (World), l’Europe, l’Asie… qui nous seront utiles pour notre partie de modélisation. ",unsafe_allow_html=True)
 
     st.write("<strong>2. Dataset sur les émissions de CO2 et gaz à effet de serre :</strong>", unsafe_allow_html=True)
-    data_co2 = pd.read_csv("../data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
+    data_co2 = pd.read_csv("./data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
     pays_uniques2 = data_co2["country"].unique()
     selected_pays2 = st.selectbox("Si vous le souhaitez, vous pouvez sélectionner un pays de votre choix :", pays_uniques2)
     if selected_pays2:
