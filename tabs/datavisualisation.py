@@ -18,11 +18,11 @@ import plotly.io as py
 
 def dataviz():
     # Concernant les anomalies de températures
-    st.image("../assets/dataviz.jpg", use_column_width=True)
+    st.image("./assets/dataviz.jpg", use_column_width=True)
     st.subheader("I. Concernant les anomalies de températures :")
     st.write("Pour rappel, un de nos objectifs est de constater le réchauffement climatique dans les différentes zones géographiques de la planète. Pour répondre à cet objectif, nous pouvons nous poser les questions suivantes et essayer d’y répondre par des visualisations :")
     st.write("**Est-ce qu’il y a eu une augmentation des températures à l’échelle globale à travers le temps ? A partir de quand ?**")
-    data_temp_average = pd.read_csv('../data/moyenne anomalie temperature par hemisphere.csv', sep=",")
+    data_temp_average = pd.read_csv('./data/moyenne anomalie temperature par hemisphere.csv', sep=",")
     source = ColumnDataSource(data=dict(
     x=data_temp_average['Year'],
     y1=data_temp_average['Glob'],
@@ -79,7 +79,7 @@ def dataviz():
     st.write("Entre les années 1880 et 1920, les anomalies de températures sont stables et restent même négatives. A partir de 1940, nous voyons que les anomalies se rapprochent de zéro. Et ce n’est qu’à partir de 1980 ou toutes les mesures d’anomalies sont positives, montrant donc un réchauffement des températures. Ceci s’explique par l’industrialisation et la mondialisation de notre monde pour répondre à une demande toujours plus croissante. Nous produisons plus, nous exportons plus et ainsi de suite…") 
     
     st.write("**Est-ce que cette augmentation des anomalies se vérifie en Europe et en France ?**")
-    data_temp = pd.read_csv("../data/anomalie_temperature_globale.csv", sep=",", encoding='cp1252')
+    data_temp = pd.read_csv("./data/anomalie_temperature_globale.csv", sep=",", encoding='cp1252')
     df_env_long = data_temp.melt(id_vars=['Area Code', 'Area', 'Months Code', 'Months', 'Element Code', 'Element', 'Unit'],var_name='Year', value_name='Temperature change')
     df_env_long['Year'] = df_env_long['Year'].str[1:].astype(int)
     data_temp_yearly = df_env_long.groupby(['Year', 'Area'], as_index=False)['Temperature change'].mean()
@@ -159,7 +159,7 @@ def dataviz():
     st.subheader("II. Concernant les emissions de CO2 :")
     st.write("Maintenant que nous avons constaté qu’il y a bel et bien un réchauffement des températures à travers le temps, il est intéressant de venir intégrer dans la boucle les émissions de CO2 à travers le globe. En effet, il est intéressant de se demander si ces émissions participent à ces augmentations de températures. Mais commençons d’abord par la même démarche que le précédent dataset.")
     st.write("**Est-ce qu’il y a eu une augmentation du CO2 à l’échelle globale à travers le temps ? A partir de quand ?**")
-    data_co2 = pd.read_csv("../data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
+    data_co2 = pd.read_csv("./data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
     columns_to_keep = [
     'country',
     'year',
@@ -209,7 +209,7 @@ def dataviz():
 
     st.write(fig)
     st.write("**Est-ce que ces émissions diffèrent en fonction d’autres paramètres ?**")
-    data_co2_par_habitant = pd.read_csv("../data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
+    data_co2_par_habitant = pd.read_csv("./data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
     df_co2_per_capita_par_pays=data_co2_par_habitant[["country","year","co2_per_capita"]]
     co2_per_capita_par_pays=pd.pivot_table(df_co2_per_capita_par_pays, values='co2_per_capita', index=['year'],columns=['country'])
     co2_per_capita_par_pays=co2_per_capita_par_pays[["North America","South America","Europe","Africa","Asia","Oceania"]]
