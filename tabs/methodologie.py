@@ -17,7 +17,7 @@ import plotly.graph_objects as go
 import plotly.io as py
 
 def methodo():
-    st.image("../assets/methodologie.jpg", use_column_width=True)
+    st.image("./assets/methodologie.jpg", use_column_width=True)
     # La première étape est de faire des prédictions sur le CO2
     st.write("Maintenant que nous avons constaté qu'il y avait bien un réchauffement des températures à l'échelle de la planète et que cette augmentation est fortement influencée par les emmissions de CO2 (principalement produites par l'industrialisation, essayons de prédire les changements de températures pour les années futures en prenant en compte les emissions de CO2 dans notre modèle")
     st.write("Voici donc la méthodologie que nous avons adoptée pour mener à bien notre projet:")
