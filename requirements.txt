@@ -4,7 +4,5 @@ matplotlib
 numpy
 seaborn
 bokeh
-scipy.stats
-plotly.express
-plotly.graph_objects
-plotly.io
+scipy
+plotly
