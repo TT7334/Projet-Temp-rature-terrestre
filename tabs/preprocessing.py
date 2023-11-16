@@ -6,7 +6,7 @@ import seaborn as sns
 
 def prepro():
     # Image de garde
-    st.image("../assets/preprocessing.jpg", use_column_width=True)
+    st.image("./assets/preprocessing.jpg", use_column_width=True)
 
     # Sous-titre "Pre-processing"
     st.markdown(f'<h2 style="text-align: center;">Pre-processing des données</h2>', unsafe_allow_html=True)
@@ -18,7 +18,7 @@ def prepro():
     st.write("Tout d’abord, comme évoqué précédemment, nous avons une colonne «Element» nous expliquant que dans ce dataset il y a deux « mesures » au même moment qui sont effectuées:") 
     st.write("La première est l’anomalie réelle (Temperature Change), puis par rapport à cette anomalie l’écart-type (standard déviation) est calculé. Cet écart-type ne nous intéresse pas et il multiplie par deux le dataset. D’autant plus que les chiffres sont souvent les mêmes.") 
     st.write("Par conséquent, nous décidons de supprimer les lignes avec pour modalités dans la variable Element: Standard Deviation.")
-    data_temp = pd.read_csv("../data/anomalie_temperature_globale.csv", sep=",", encoding='cp1252')
+    data_temp = pd.read_csv("./data/anomalie_temperature_globale.csv", sep=",", encoding='cp1252')
     data_temp=data_temp[data_temp['Element'] != 'Standard Deviation']
     st.write(data_temp)
     st.write("Ensuite, nous avons des variables «Area Code», «Months code» et «Element Code» qui sont finalement une codification de variables déjà présentes dans le dataset. Nous décidons de les supprimer également car nous avons déjà l’information sous une autre forme.")
@@ -37,7 +37,7 @@ def prepro():
     
     # Concernant le dataset sur le CO2
     st.subheader("II. Dataset sur les emissions de CO2 et Gaz à effet de serre :")
-    data_co2 = pd.read_csv("../data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
+    data_co2 = pd.read_csv("./data/co2_global_non_nettoye.csv", sep=",", encoding='cp1252')
     st.write(data_co2)
     st.write("Tout d’abord, comme nous l’avons constaté précédemment, ce dataset possède énormément de colonnes. Trop de colonnes. Toutes ne sont pas utiles pour notre datavisualisation ou notre modèle prédictif.")
     st.write("Nous avons donc fait le choix de supprimer des colonnes pour ne garder celles que nous jugeons le plus utiles, à savoir:")
