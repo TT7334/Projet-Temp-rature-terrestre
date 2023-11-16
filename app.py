@@ -30,11 +30,11 @@ st.markdown("""
 st.sidebar.image("./assets/logo_datascientest.png")
 
 # Case à cocher pour la navigation entre les pages
-from introduction import introduction_projet
-from preprocessing import prepro
-from datavisualisation import dataviz
-from methodologie import methodo
-from demo import demo
+from tabs.introduction import introduction_projet
+from tabs.preprocessing import prepro
+from tabs.datavisualisation import dataviz
+from tabs.methodologie import methodo
+from tabs.demo import demo
 PAGES = {
     "Introduction du projet": introduction_projet,
     "Pre-processing":prepro,
