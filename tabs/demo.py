@@ -3,17 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from bokeh.plotting import figure, show, output_notebook, output_file
-from bokeh.models import HoverTool, ColumnDataSource, CategoricalColorMapper, Legend, LegendItem, Range1d, FixedTicker, Label, LabelSet
-from bokeh.layouts import gridplot, column, row
-from bokeh.palettes import Category20
-from bokeh.models.annotations import Title
-from bokeh.models.tickers import FixedTicker
-from bokeh.models import GeoJSONDataSource
-from scipy.stats import gaussian_kde
-from scipy.stats import pearsonr
-import plotly.express as px
-import plotly.graph_objects as go
-import plotly.io as py
+
 def demo():
-    st.write("rajouter les éléments")
+    st.write("Une fois qu'on à fait les prédicitions et qu'on les a concaténés dans un dataframe (sans oublié les années et en option la population). Il ne restera qu'à faire une mise en page ou l'utilisateur rentre l'année qu'il souhaite et s'affichera le chiffre prédit")
+    st.write("Ensuite on compare nos prédictions avec le GIEC.")
